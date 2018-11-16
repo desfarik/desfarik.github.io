@@ -542,7 +542,7 @@ function LineArrowBuilderService(TreeConstants, EllipsePointCalculator, LinePara
         let image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
         image.setAttribute('x', x);
         image.setAttribute('y', y);
-        image.setAttribute('href', `src/icons/${getOperator(operand)}.png`);
+        image.setAttribute('href', `assets/${getOperator(operand)}.png`);
         return image;
     }
 
