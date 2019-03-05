@@ -3,10 +3,8 @@
 
     function fetchAndAdd(request) {
         return fetch(request).then((response) => {
-            console.log(response);
             return caches.open(CACHE_NAME).then((cache)=>{
                 cache.put(request, response.clone());
-                console.log(response);
                 return response;
             });
         })
