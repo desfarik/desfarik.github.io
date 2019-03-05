@@ -1,3 +1,22 @@
-(()=>{
-    console.log('bla');
+(() => {
+    const CACHE_NAME = 'my-site-cache-v1';
+
+    function fetchAndAdd(request) {
+        return fetch(request).then((response) => {
+            console.log(response);
+            return caches.open(CACHE_NAME).then((cache)=>{
+                cache.put(request, response.clone());
+                console.log(response);
+                return response;
+            });
+        })
+    }
+
+    self.addEventListener('fetch', function (event) {
+        event.respondWith(
+            caches.match(event.request).then(function (response) {
+                return response || fetchAndAdd(event.request);
+            })
+        );
+    });
 })();
