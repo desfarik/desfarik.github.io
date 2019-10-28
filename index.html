@@ -1,255 +1,31 @@
-<!--<!doctype html>-->
-<!--<html lang=en>-->
-<!--<head>-->
-    <!--<link rel="manifest" href="./manifest.json">-->
-    <!--<meta name="google" content="notranslate" />-->
-    <!--<link rel=stylesheet href=./src/angular-material.min.css>-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Catamaran|Courgette" rel=stylesheet>-->
-    <!--<meta charset=UTF-8>-->
-    <!--<title>Number Tree</title>-->
-    <!--<link rel=icon type=image/x-icon href=./assets/tree.png>-->
-<!--<link href="index.css" rel="stylesheet"></head>-->
-<!--<body ng-app=app ng-controller=ctrl>-->
-<!--<ui-view></ui-view>-->
-<!--<script>-->
-    <!--window.addEventListener('load', function() {-->
-        <!--navigator.serviceWorker.register('./service-worker.js').then(function(registration) {-->
-            <!--console.log('ServiceWorker registration successful with scope: ', registration.scope);-->
-        <!--}).catch(function(err) {-->
-            <!--console.log('ServiceWorker registration failed: ', err);-->
-        <!--});-->
-    <!--});-->
-<!--</script>-->
-<!--<script src=./src/angular.min.js></script>-->
-<!--<script src=./src/angular-aria.min.js></script>-->
-<!--<script src=./src/angular-animate.min.js></script>-->
-<!--<script src=./src/angular-material.min.js></script>-->
-<!--<script src=./src/angular-ui-router.min.js></script>-->
-<!--<script src=./src/angular-messages.min.js></script>-->
-<!--<script src=./src/lodash.min.js></script>-->
-<!--<script type="text/javascript" src="index.js"></script></body>-->
-<!--</html>-->
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <style>
-        .board {
-            display: flex;
-            flex-wrap: wrap;
-            width: 330px;
-            overflow: hidden;
-        }
-
-        .board div {
-            width: 30px;
-            height: 30px;
-            position: relative;
-        }
-
-        .board div:nth-child(even) {
-            background: #745853;
-        }
-
-        .board div:nth-child(odd) {
-            background: #f4cd8d;
-        }
-
-        .board div:active {
-            background: #ff0000;
-        }
-
-        .board div:active:before {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -60px;
-            top: -30px;
-            z-index: 80;
-        }
-
-        .board div:active:after {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -30px;
-            top: -60px;
-            z-index: 80;
-        }
-
-        .board div:active + div:before {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: 0;
-            top: -60px;
-            z-index: 80;
-        }
-
-        .board div:active + div:after {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: 30px;
-            top: -30px;
-            z-index: 80;
-        }
-
-        .board div:active + div + div:before {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -90px;
-            top: 60px;
-            z-index: 80;
-        }
-
-        .board div:active + div + div:after {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -120px;
-            top: 30px;
-            z-index: 80;
-        }
-
-        .board div:active + div + div + div:before {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -60px;
-            top: 60px;
-            z-index: 80;
-        }
-
-        .board div:active + div + div + div:after {
-            content: '';
-            background: #0000FF;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: -30px;
-            top: 30px;
-            z-index: 80;
-        }
-        .wrapper {
-            width: 240px;
-            height: 240px;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body style="margin: 0;">
-<div class="wrapper">
-
-    <div class="board">
-        <div n="1"></div>
-        <div n="2"></div>
-        <div n="3"></div>
-        <div n="4"></div>
-        <div n="5"></div>
-        <div n="6"></div>
-        <div n="7"></div>
-        <div n="8"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="9"></div>
-        <div n="10"></div>
-        <div n="11"></div>
-        <div n="12"></div>
-        <div n="13"></div>
-        <div n="14"></div>
-        <div n="15"></div>
-        <div n="16"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="17"></div>
-        <div n="18"></div>
-        <div n="19"></div>
-        <div n="20"></div>
-        <div n="21"></div>
-        <div n="22"></div>
-        <div n="23"></div>
-        <div n="24"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="25"></div>
-        <div n="26"></div>
-        <div n="27"></div>
-        <div n="28"></div>
-        <div n="29"></div>
-        <div n="30"></div>
-        <div n="31"></div>
-        <div n="32"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="33"></div>
-        <div n="34"></div>
-        <div n="35"></div>
-        <div n="36"></div>
-        <div n="37"></div>
-        <div n="38"></div>
-        <div n="39"></div>
-        <div n="40"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="41"></div>
-        <div n="42"></div>
-        <div n="43"></div>
-        <div n="44"></div>
-        <div n="45"></div>
-        <div n="46"></div>
-        <div n="47"></div>
-        <div n="48"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="49"></div>
-        <div n="50"></div>
-        <div n="51"></div>
-        <div n="52"></div>
-        <div n="53"></div>
-        <div n="54"></div>
-        <div n="55"></div>
-        <div n="56"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-        <div n="fake"></div>
-
-        <div n="57"></div>
-        <div n="58"></div>
-        <div n="59"></div>
-        <div n="60"></div>
-        <div n="61"></div>
-        <div n="62"></div>
-        <div n="63"></div>
-        <div n="64"></div>
-    </div>
-</div>
-</body>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="google" content="notranslate" />
+    <link rel=stylesheet href=./src/angular-material.min.css>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Courgette" rel=stylesheet>
+    <meta charset=UTF-8>
+    <title>Number Tree</title>
+    <link rel=icon type=image/x-icon href=./assets/tree.png>
+<link href="index.css" rel="stylesheet"></head>
+<body ng-app=app ng-controller=ctrl>
+<ui-view></ui-view>
+<script>
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+</script>
+<script src=./src/angular.min.js></script>
+<script src=./src/angular-aria.min.js></script>
+<script src=./src/angular-animate.min.js></script>
+<script src=./src/angular-material.min.js></script>
+<script src=./src/angular-ui-router.min.js></script>
+<script src=./src/angular-messages.min.js></script>
+<script src=./src/lodash.min.js></script>
+<script type="text/javascript" src="index.js"></script></body>
 </html>
