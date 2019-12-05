@@ -1,3 +1,3 @@
 # Test dialog
 
-This is the [dialog](https://desfarik.github.io/) site hosted on GitHub Pages.
+This [dialog](https://desfarik.github.io/) site is hosted on GitHub Pages.
