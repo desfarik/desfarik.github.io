@@ -83,8 +83,9 @@
             margin-right: 4px;
         }
 
-        .close-icon-button img {
+        .close-icon-button svg {
             height: 14px;
+            width: 14px;
         }
 
         .dialog-content {
@@ -104,7 +105,7 @@
             margin-bottom: 5px;
         }
 
-        .dialog-title-img-container img {
+        .dialog-title-img-container svg {
             height: 48px;
         }
 
@@ -152,13 +153,17 @@
     <div class="dialog">
         <div class="dialog-header">
             <button class="close-icon-button" onclick="closeDialog()">
-                <img alt="close" src="./assets/close.svg">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;"
+                     xml:space="preserve" fill="white"><g><g id="cross"><g><polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011 			"/></g></g></g>
+                </svg>
             </button>
         </div>
         <div class="dialog-content">
             <div class="dialog-title">
                 <div class="dialog-title-img-container">
-                    <img alt="title" src="./assets/title.svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4444.38 4487.38"><defs><style>.cls-1{fill:#fff;}</style></defs><title>321Ресурс 3</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="4444.15 1923.65 4444.15 641.22 3333.49 0.11 2222.36 641.44 3333.49 1283 3333.49 2565.88 4444.38 1924.33"/><polyline class="cls-1" points="0.45 642.23 0.45 1924.66 1111.12 2565.99 1111.12 1283.11 2222.25 641.55 1111.12 0.23 1111.12 0 0 641.55"/><polygon class="cls-1" points="1111.12 2565.88 1111.12 3848.76 1114.75 3846.95 2224.06 4487.38 3333.37 3846.95 3333.37 2565.88 2222.25 3207.43 1111.12 2565.88"/></g></g></svg>
                 </div>
                 <p>30-Day Free Trial</p>
             </div>
@@ -170,7 +175,9 @@
             <div>
                 <button class="submit-button" onclick="submitDialog()">
                     Start My Free Trial Today
-                    <img alt="" src="./assets/arrow-right.svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#109af7" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/>
+                    </svg>
                 </button>
             </div>
             <p><a class="link-more" href="">Learn more</a></p>
